@@ -12,7 +12,7 @@ export default function SearchBooks({ searchBooks, handleSearchBooks, setBooksBy
                     onChange={handleSearchBooks}
                     name="searchInput"
                 />
-                <button type="submit">Search</button>
+                <button type="submit">Find Book</button>
             </form>
         </div>
     )
