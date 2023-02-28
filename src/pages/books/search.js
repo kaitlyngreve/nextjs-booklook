@@ -26,7 +26,7 @@ export default function Books() {
     return (
         <div>
             <Head>
-                <title>Books List</title>
+                <title>Search For Books</title>
             </Head>
 
             <Link href={'/'}>Back</Link>
