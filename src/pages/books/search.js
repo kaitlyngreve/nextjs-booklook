@@ -29,7 +29,7 @@ export default function Books() {
                 <title>Search For Books</title>
             </Head>
 
-            <Link href={'/'}>Back</Link>
+            <Link href={'/'}>📚</Link>
 
             <SearchBooks setBooksByQuery={setBooksByQuery} searchBooks={searchBooks} handleSearchBooks={handleSearchBooks} />
             {books.map((book) => {

@@ -1,10 +1,10 @@
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from './firebase-config';
-import { useState } from "react";
 
 import Head from 'next/head'
 import Link from 'next/link';
 import Login from './login';
+import Signout from "./signout";
 
 export default function Home() {
   const [user] = useAuthState(auth);
@@ -22,12 +22,19 @@ export default function Home() {
 
           <div>
             <main>
-              <Link href={'/books/search'}>click here</Link>
+              <h4>Looking for a Specific Book?</h4>
+              <Link href={'/books/search'}>Click Here</Link>
             </main>
           </div>
+          <Signout />
         </div>
         :
-        <Login />
+        <>
+          <Head>
+            <title>Login to BookLook</title>
+          </Head>
+          <Login />
+        </>
       }
     </>
   )
