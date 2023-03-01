@@ -2,15 +2,14 @@
 
 export default function Book({ book }) {
     let bookV = book.volumeInfo
-    let bookImg = bookV.imageLinks
-
-    console.log(bookV.authors)
+    const bookImg = bookV.imageLinks === undefined ? "" : `${bookV.imageLinks.thumbnail}`
+    const bookAuthor = bookV.authors === undefined ? "N/A" : `${bookV.authors.join(", ")}`
 
     return (
         <div>
             <h4>Title: {bookV.title}</h4>
-            <p>Author(s): {bookV.authors}</p>
-            <img src={bookImg === undefined ? "" : `${bookImg.thumbnail}`} alt="book photo" />
+            <p>Author(s): {bookAuthor}</p>
+            <img src={bookImg} alt="Book Cover" />
         </div>
     )
 }
