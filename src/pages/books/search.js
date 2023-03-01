@@ -4,6 +4,8 @@ import Link from 'next/link';
 import Book from './book';
 import SearchBooks from './search-books';
 
+import bookStyles from '/src/styles/books.module.css';
+
 export default function Books() {
     const [books, setBooks] = useState([]);
     const [searchBooks, setSearchBooks] = useState("");
@@ -16,7 +18,7 @@ export default function Books() {
         e.preventDefault();
 
         const searchQuery = e.target.searchInput.value;
-        fetch(`https://www.googleapis.com/books/v1/volumes?q=${searchQuery}&printType=books`)
+        fetch(`https://www.googleapis.com/books/v1/volumes?q=${searchQuery}&printType=books&maxResults=40`)
             .then((r) => r.json())
             .then((data) => setBooks(data.items))
 
@@ -32,9 +34,11 @@ export default function Books() {
             <Link href={'/'}>📚</Link>
 
             <SearchBooks setBooksByQuery={setBooksByQuery} searchBooks={searchBooks} handleSearchBooks={handleSearchBooks} />
-            {books.map((book) => {
-                return <Book book={book} key={book.id} />
-            })}
+            <div className={bookStyles.cardContainer}>
+                {books.map((book) => {
+                    return <Book book={book} key={book.id} />
+                })}
+            </div>
         </div>
     )
 }
