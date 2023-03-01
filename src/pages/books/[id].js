@@ -1,14 +1,17 @@
 import Link from "next/link";
-import { useRouter } from 'next/router'
 import { getBookData } from '../../lib/books';
 
 export default function Book({ bookData }) {
-
-    console.log(bookData);
+    const bookV = bookData.book.volumeInfo;
+    const bookCover = bookV.imageLinks === undefined ? "" : `${bookV.imageLinks.thumbnail}`;
+    const bookAuthor = bookV.authors === undefined ? "N/A" : `${bookV.authors.join(", ")}`;
 
     return (
         <div>
-            <h1 className="text-3xl font-bold underline">{bookData.book.volumeInfo.title}</h1>
+            <h4 className="text-3xl font-bold underline">{bookV.title}</h4>
+            <p>{bookAuthor}</p>
+            <img src={bookCover} alt="Book Cover" />
+            <p>{bookV.categories}</p>
             <Link href={"/books/search"}>back you go bye</Link>
         </div>
     );
