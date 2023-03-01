@@ -12,7 +12,7 @@ export default function SearchBooks({ searchBooks, handleSearchBooks, setBooksBy
                     onChange={handleSearchBooks}
                     name="searchInput"
                 />
-                <button type="submit">Find Book</button>
+                <button type="submit" className="px-4 py-2 font-semibold text-sm bg-cyan-500 text-white rounded-full shadow-sm">Find Book</button>
             </form>
         </div>
     )

@@ -18,7 +18,7 @@ export default function Books() {
         e.preventDefault();
 
         const searchQuery = e.target.searchInput.value;
-        fetch(`https://www.googleapis.com/books/v1/volumes?q=${searchQuery}&printType=books&maxResults=40`)
+        fetch(`https://www.googleapis.com/books/v1/volumes?q=${searchQuery}&printType=books&maxResults=9`)
             .then((r) => r.json())
             .then((data) => setBooks(data.items))
 
