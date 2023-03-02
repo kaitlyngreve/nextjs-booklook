@@ -2,16 +2,16 @@ import Link from "next/link";
 import { getBookData } from '../../lib/books';
 
 export default function Book({ bookData }) {
-    const bookV = bookData.book.volumeInfo;
-    const bookCover = bookV.imageLinks === undefined ? "" : `${bookV.imageLinks.thumbnail}`;
-    const bookAuthor = bookV.authors === undefined ? "N/A" : `${bookV.authors.join(", ")}`;
+    const bookVolume = bookData.book.volumeInfo;
+    const bookCover = bookVolume.imageLinks === undefined ? "" : `${bookVolume.imageLinks.thumbnail}`;
+    const bookAuthor = bookVolume.authors === undefined ? "N/A" : `${bookVolume.authors.join(", ")}`;
 
     return (
         <div>
-            <h4 className="text-3xl font-bold underline">{bookV.title}</h4>
+            <h4 className="text-3xl font-bold underline">{bookVolume.title}</h4>
             <p>{bookAuthor}</p>
             <img src={bookCover} alt="Book Cover" />
-            <p>{bookV.categories}</p>
+            <div dangerouslySetInnerHTML={{ __html: bookVolume.description }} />
             <Link href={"/books/search"}>back you go bye</Link>
         </div>
     );

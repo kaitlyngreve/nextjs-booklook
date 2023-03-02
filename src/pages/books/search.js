@@ -34,7 +34,7 @@ export default function Books() {
             <Link href={'/'}>📚</Link>
 
             <SearchBooks setBooksByQuery={setBooksByQuery} searchBooks={searchBooks} handleSearchBooks={handleSearchBooks} />
-            <div className={bookStyles.cardContainer}>
+            <div className={bookStyles.bookGridWrapper}>
                 {books.map((book) => {
                     return <Book book={book} key={book.id} />
                 })}

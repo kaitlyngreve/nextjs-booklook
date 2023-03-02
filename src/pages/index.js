@@ -5,6 +5,9 @@ import Head from 'next/head'
 import Link from 'next/link';
 import Login from './login';
 import Signout from "./signout";
+import Hero from "src/components/hero.js"
+
+import styles from '/src/styles/mainPage.module.css';
 
 export default function Home() {
   const [user] = useAuthState(auth);
@@ -22,7 +25,7 @@ export default function Home() {
 
           <div>
             <main>
-              <h4>Looking for a Specific Book?</h4>
+              <Hero />
               <Link href={'/books/search'}>Click Here</Link>
             </main>
           </div>

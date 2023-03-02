@@ -1,14 +1,31 @@
-.cardContainer {
+.bookGridWrapper {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
-    grid-row-gap: 5px;
-    grid-column-gap: 0;
+    grid-row-gap: 20px;
+    grid-column-gap: 20px;
     max-width: 1000px;
     margin: 0 auto;
 }
 
-.card {
-    margin-top: 45px;
-    text-align: center;
+.book {
+    padding: 15px 20px;
+    position: relative;
+    transition: all .3s ease;
+    aspect-ratio: 1;
+}
+
+.book:after {
+    content: '→';
+    color: #FFCF00;
+    font-size: 48px;
+    font-weight: 100;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    transition: all .2s ease;
+}
+
+.book:hover:after {
+    right: -20px;
 }
