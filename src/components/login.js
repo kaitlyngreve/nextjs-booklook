@@ -1,4 +1,4 @@
-import { auth } from "./firebase-config";
+import { auth } from "../pages/firebase-config";
 import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 
 export default function Login() {

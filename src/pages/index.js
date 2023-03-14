@@ -3,8 +3,8 @@ import { auth } from './firebase-config';
 
 import Head from 'next/head'
 import Link from 'next/link';
-import Login from './login';
-import Signout from "./signout";
+import Login from '../components/login';
+import Signout from "../components/signout";
 import Hero from "src/components/hero.js"
 
 import styles from '/src/styles/mainPage.module.css';
@@ -26,6 +26,7 @@ export default function Home() {
           <div>
             <main>
               <Hero />
+              <Link href={'/bookshelf'}>My Bookshelf</Link>
               <Link href={'/books/search'}>Click Here</Link>
             </main>
           </div>
@@ -34,8 +35,10 @@ export default function Home() {
         :
         <>
           <Head>
-            <title>Login to BookLook</title>
+            <title>Book Look</title>
           </Head>
+          <Hero />
+          <Link href={'/books/search'}>Click Here</Link>
           <Login />
         </>
       }

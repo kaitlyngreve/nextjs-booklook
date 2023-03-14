@@ -2,9 +2,14 @@
 
 /* font-family: 'Space Mono', monospace; */
 
+.heroContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
 .header {
     font-size: 45px;
     font-family: 'Abril Fatface', cursive;
-    text-align: center;
-    display: flex;
 }

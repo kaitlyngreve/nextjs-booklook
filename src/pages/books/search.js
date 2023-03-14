@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Book from './book';
 import SearchBooks from './search-books';
+import Hero from '@/components/hero';
 
 import bookStyles from '/src/styles/books.module.css';
 
@@ -30,8 +31,9 @@ export default function Books() {
             <Head>
                 <title>Search For Books</title>
             </Head>
-
-            <Link href={'/'}>📚</Link>
+            <Link href={'/'}>
+                <Hero />
+            </Link>
 
             <SearchBooks setBooksByQuery={setBooksByQuery} searchBooks={searchBooks} handleSearchBooks={handleSearchBooks} />
             <div className={bookStyles.bookGridWrapper}>
