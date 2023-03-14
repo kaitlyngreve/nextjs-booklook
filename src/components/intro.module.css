@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+
+.container {
+    padding-top: 26px;
+    max-width: 45%;
+    margin: 0 auto;
+}
+
+.p {
+    font-size: 26px;
+    margin-bottom: 16px;
+    line-height: 1.5em;
+    font-family: 'Space Mono', monospace;
+}
