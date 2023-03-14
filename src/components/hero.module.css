@@ -3,13 +3,13 @@
 /* font-family: 'Space Mono', monospace; */
 
 .heroContainer {
-    display: flex;
-    flex-direction: column;
     justify-content: center;
     text-align: center;
+    padding: 16px;
 }
 
 .header {
     font-size: 45px;
     font-family: 'Abril Fatface', cursive;
+    margin-bottom: 16px;
 }

@@ -27,7 +27,6 @@ export default function Home() {
             <main>
               <Hero />
               <Link href={'/bookshelf'}>My Bookshelf</Link>
-              <Link href={'/books/search'}>Click Here</Link>
             </main>
           </div>
           <Signout />
@@ -38,7 +37,6 @@ export default function Home() {
             <title>Book Look</title>
           </Head>
           <Hero />
-          <Link href={'/books/search'}>Click Here</Link>
           <Login />
         </>
       }
