@@ -3,17 +3,16 @@ import { auth } from './firebase-config';
 
 import Head from 'next/head'
 import Link from 'next/link';
-import Login from '../components/login';
+import Intro from "@/components/intro";
 import Signout from "../components/signout";
 import Hero from "src/components/hero.js"
-import Intro from "@/components/intro";
 
 import styles from '/src/styles/mainPage.module.css';
 
 export default function Home() {
   const [user] = useAuthState(auth);
 
-  const firstName = user ? user.displayName.split(' ')[0] : <Login />;
+  const firstName = user ? user.displayName.split(' ')[0] : <Intro />;
 
   return (
     <>
@@ -39,7 +38,6 @@ export default function Home() {
           </Head>
           <Hero />
           <Intro />
-          <Login />
         </>
       }
     </>
