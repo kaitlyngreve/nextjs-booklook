@@ -6,6 +6,7 @@ import Link from 'next/link';
 import Login from '../components/login';
 import Signout from "../components/signout";
 import Hero from "src/components/hero.js"
+import Intro from "@/components/intro";
 
 import styles from '/src/styles/mainPage.module.css';
 
@@ -37,6 +38,7 @@ export default function Home() {
             <title>Book Look</title>
           </Head>
           <Hero />
+          <Intro />
           <Login />
         </>
       }
