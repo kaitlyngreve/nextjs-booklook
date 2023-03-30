@@ -3,9 +3,13 @@
 /* font-family: 'Space Mono', monospace; */
 
 .heroContainer {
-    justify-content: center;
+    display: flex;
+    flex-direction: column;
     text-align: center;
-    padding: 16px;
+}
+
+.searchButton {
+    margin: 15px;
 }
 
 .header {

@@ -1,0 +1,11 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 45%;
+}
+
+.coverImg {
+    width: 45%;
+    height: auto;
+}

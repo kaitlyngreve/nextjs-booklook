@@ -4,9 +4,11 @@ import Link from 'next/link';
 export default function Hero() {
     return (
         <div className={styles.heroContainer}>
-            <h1 className={styles.header}>Book 📖 Look</h1>
+            <Link className={styles.header} href={'/'}>
+                Book 📖 Look
+            </Link>
             <Link href={'/books/search'}
-                className="px-4 py-2 font-semibold text-sm bg-cyan-500 text-white rounded-full shadow-sm">
+                className={styles.searchButton}>
                 Looking for a specific book?
             </Link>
         </div>

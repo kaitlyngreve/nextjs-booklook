@@ -35,6 +35,7 @@ export default function Home() {
         <>
           <Head>
             <title>Book Look</title>
+            <link rel="icon" href="/favicon.ico" />
           </Head>
           <Hero />
           <Intro />

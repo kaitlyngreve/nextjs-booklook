@@ -1,5 +1,8 @@
 import Link from "next/link";
+import Hero from "@/components/hero";
 import { getBookData } from '../../lib/books';
+
+import styles from './id.module.css'
 
 export default function Book({ bookData }) {
     const bookVolume = bookData.book.volumeInfo;
@@ -8,11 +11,18 @@ export default function Book({ bookData }) {
 
     return (
         <div>
-            <h4 className="text-3xl font-bold underline">{bookVolume.title}</h4>
-            <p>{bookAuthor}</p>
-            <img src={bookCover} alt="Book Cover" />
-            <div dangerouslySetInnerHTML={{ __html: bookVolume.description }} />
-            <Link href={"/books/search"}>back you go bye</Link>
+            <Hero />
+            <div className={styles.container}>
+                <h4 className={styles.title}>{bookVolume.title}</h4>
+                <p>{bookAuthor}</p>
+                <img className={styles.coverImg} src={bookCover} alt="Book Cover" />
+                <div dangerouslySetInnerHTML={{ __html: bookVolume.description }} />
+                <Link
+                    className="px-4 py-2 font-semibold text-sm bg-cyan-500 text-white rounded-full shadow-sm"
+                    href={"/books/search"}>
+                    Back to Search
+                </Link>
+            </div>
         </div>
     );
 }
